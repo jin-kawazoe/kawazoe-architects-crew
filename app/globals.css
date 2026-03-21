@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-jost), "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+  --font-display: var(--font-cormorant), "Georgia", serif;
+}
+
+:root {
+  --color-ink: #0a0a0a;
+  --color-muted: #7a756d;
+  --color-border: #c4beb5;
+  --color-bg: #faf9f7;
+  --color-bg-subtle: #f0eeeb;
+  --color-accent: #a67c52;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  line-height: 1.75;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: #fff;
+}
