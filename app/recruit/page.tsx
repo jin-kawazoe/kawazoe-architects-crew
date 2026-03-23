@@ -5,14 +5,71 @@ import RecruitForm from "./RecruitForm";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "採用エントリー | KAWAZOE CREW",
+  title: "採用エントリー | 河添建築事務所 KAWAZOE CREW",
   description:
-    "河添建築事務所の採用エントリー。高松・東京にてスタッフを募集しています。",
+    "河添建築事務所（高松・東京）の採用エントリー。意匠設計・CADオペレーター・設計アシスタントを募集。未経験・第二新卒歓迎。建築への熱量がある方のご応募お待ちしています。",
+};
+
+const jobPostingSchema = {
+  "@context": "https://schema.org",
+  "@type": "JobPosting",
+  title: "建築設計スタッフ（意匠設計 / CADオペレーター / 設計アシスタント）",
+  description:
+    "河添建築事務所にて建築設計業務をともに進めるスタッフを募集しています。意匠設計・CADオペレーター・設計アシスタント・模型製作など。経験・資格よりも、建築に向き合う姿勢と自分の頭で考えようとする人柄を重視しています。未経験・第二新卒も歓迎。",
+  datePosted: "2026-01-01",
+  employmentType: ["FULL_TIME", "PART_TIME", "OTHER"],
+  hiringOrganization: {
+    "@type": "Organization",
+    name: "河添建築事務所",
+    sameAs: "https://kawazoe-architects.com",
+    logo: "https://kawazoe-architects.com/crew/favicon.ico",
+  },
+  jobLocation: [
+    {
+      "@type": "Place",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "高松市",
+        addressRegion: "香川県",
+        addressCountry: "JP",
+      },
+    },
+    {
+      "@type": "Place",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "東京都",
+        addressCountry: "JP",
+      },
+    },
+  ],
+  baseSalary: {
+    "@type": "MonetaryAmount",
+    currency: "JPY",
+    value: {
+      "@type": "QuantitativeValue",
+      description: "経験・スキルに応じて応相談",
+    },
+  },
+  qualifications: "建築への熱量がある方。未経験・第二新卒歓迎。",
+  skills: "建築設計、CAD、模型製作",
+  industry: "建築設計",
+  occupationalCategory: "建築・設計",
+  applicantLocationRequirements: {
+    "@type": "Country",
+    name: "JP",
+  },
+  directApply: true,
+  url: "https://kawazoe-architects.com/crew/recruit/",
 };
 
 export default function RecruitPage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#faf9f7]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jobPostingSchema) }}
+      />
       <Header />
 
       <main className="flex-1">

@@ -17,14 +17,33 @@ const jost = Jost({
 });
 
 export const metadata: Metadata = {
-  title: "KAWAZOE CREW",
+  title: {
+    default: "KAWAZOE CREW | 河添建築事務所 採用・パートナー募集",
+    template: "%s | 河添建築事務所",
+  },
   description:
-    "河添建築事務所の外部パートナー登録・採用エントリーサイト",
+    "河添建築事務所（香川・高松 / 東京）の採用エントリー・外部パートナー登録サイト。意匠設計・CADオペレーター・設計アシスタントを募集中。未経験・第二新卒歓迎。フリーランス・業務委託も受付中。",
+  keywords: [
+    "河添建築事務所", "建築事務所 求人", "建築 採用", "設計事務所 スタッフ募集",
+    "高松 建築 求人", "東京 建築 求人", "意匠設計 求人", "CADオペレーター 求人",
+    "建築 アルバイト", "設計事務所 アルバイト", "建築 未経験", "第二新卒 建築",
+    "建築 パートナー", "建築 業務委託", "フリーランス 建築",
+  ],
   openGraph: {
-    title: "KAWAZOE CREW",
+    title: "KAWAZOE CREW | 河添建築事務所 採用・パートナー募集",
     description:
-      "河添建築事務所の外部パートナー登録・採用エントリーサイト",
+      "河添建築事務所（香川・高松 / 東京）の採用エントリー・外部パートナー登録サイト。未経験・第二新卒歓迎。",
     siteName: "KAWAZOE CREW",
+    locale: "ja_JP",
+    type: "website",
+    url: "https://kawazoe-architects.com/crew/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: "https://kawazoe-architects.com/crew/",
   },
 };
 
